@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Complex Frequency — an interactive story</title>
+  <link rel="stylesheet" href="./src/ui/design.css" />
+  <link rel="stylesheet" href="./src/ui/components.css" />
+
+  <!-- `three` resolved from the installed package (registry per .npmrc). -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./node_modules/three/build/three.module.js",
+      "three/addons/": "./node_modules/three/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- VIZ mounts the 3D scene here (full-bleed backdrop) -->
+  <div id="scene-host"></div>
+
+  <!-- STORY populates this glass panel per step -->
+  <aside id="narrative">
+    <div class="content" id="narrative-content">
+      <div class="kicker" id="st-kicker"></div>
+      <h1 class="title" id="st-title"></h1>
+      <div class="prose" id="st-prose"></div>
+      <figure class="eq" id="st-eq" hidden></figure>
+      <div class="controls" id="st-controls"></div>
+    </div>
+  </aside>
+
+  <!-- STORY wires navigation -->
+  <nav id="stepnav">
+    <button id="prev" aria-label="previous">←</button>
+    <div class="dots" id="dots"></div>
+    <button id="next" aria-label="next">→</button>
+  </nav>
+  <span id="counter"></span>
+
+  <script type="module" src="./src/app.js"></script>
+  <!-- chat widget: self-initializing; talks to the local rate-limited proxy -->
+  <script type="module" src="./src/chat/chat.js"></script>
+</body>
+</html>

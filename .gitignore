@@ -1,0 +1,16 @@
+# secrets — never commit
+.env
+*.env
+!.env.example
+
+# node
+node_modules/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# os / editor
+.DS_Store
+Thumbs.db

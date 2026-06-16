@@ -1,0 +1,13 @@
+{
+  "name": "complex-frequency-web",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Interactive Three.js explorable for radial/azimuthal/torsional frequency",
+  "type": "module",
+  "scripts": {
+    "serve": "python -m http.server 8000"
+  },
+  "dependencies": {
+    "three": "^0.169.0"
+  }
+}
